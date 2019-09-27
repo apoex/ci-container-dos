@@ -1,4 +1,4 @@
-FROM semaphoreci/ruby:2.5.1
+FROM semaphoreci/ubuntu:18.04
 
 ## source for libssl and libpng12-0 package
 RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5 \
@@ -6,6 +6,8 @@ RUN  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5 \
 
 RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     libxmlsec1-dev \
+    fontconfig \
+    libxrender1 \
     libjpeg-turbo8 \
     xfonts-75dpi \
  && rm -rf /var/lib/apt/lists/*
